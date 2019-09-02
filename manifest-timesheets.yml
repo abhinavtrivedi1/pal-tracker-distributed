@@ -2,11 +2,11 @@ applications:
 - name: tracker-timesheets
   path: ./applications/timesheets-server/build/libs/timesheets-server.jar
   routes:
-  - route: timesheets-pal-e4c33492-cd46-11e9-b66e-5bb596fd3a6d.api.sys.evans.pal.pivotal.io
+  - route: timesheets-pal-e4c33492-cd46-11e9-b66e-5bb596fd3a6d.apps.evans.pal.pivotal.io
   memory: 1G
   instances: 1
   env:
-    REGISTRATION_SERVER_ENDPOINT: http://registration-pal-e4c33492-cd46-11e9-b66e-5bb596fd3a6d.api.sys.evans.pal.pivotal.io
+    REGISTRATION_SERVER_ENDPOINT: http://registration-pal-e4c33492-cd46-11e9-b66e-5bb596fd3a6d.apps.evans.pal.pivotal.io
     JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
   services:
   - tracker-timesheets-database
