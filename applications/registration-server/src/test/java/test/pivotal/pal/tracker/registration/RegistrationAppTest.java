@@ -1,6 +1,6 @@
 package test.pivotal.pal.tracker.registration;
 
-import io.pivotal.pal.tracker.registration.App;
+import io.pivotal.pal.tracker.registration.RegistrationServerApp;
 import org.junit.Test;
 import org.springframework.web.client.RestTemplate;
 
@@ -10,7 +10,7 @@ public class RegistrationAppTest {
 
     @Test
     public void embedded() {
-        App.main(new String[]{});
+        RegistrationServerApp.main(new String[]{});
 
         RestTemplate restTemplate = new RestTemplate();
 
