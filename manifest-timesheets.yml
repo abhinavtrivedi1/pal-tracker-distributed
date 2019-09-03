@@ -1,13 +1,15 @@
 applications:
-- name: tracker-timesheets
-  path: ./applications/timesheets-server/build/libs/timesheets-server.jar
-  routes:
-  - route: timesheets-pal-e4c33492-cd46-11e9-b66e-5bb596fd3a6d.apps.evans.pal.pivotal.io
-  memory: 1G
-  instances: 1
-  env:
-    JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
+  - name: tracker-timesheets
+    path: ./applications/timesheets-server/build/libs/timesheets-server.jar
+    routes:
+      - route: timesheets-pal-e4c33492-cd46-11e9-b66e-5bb596fd3a6d.apps.evans.pal.pivotal.io
+    memory: 1G
+    instances: 1
+    env:
+      JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
+      GRANT_TYPE: client_credentials
   services:
-  - tracker-timesheets-database
-  - tracker-service-registry
-  - tracker-circuit-breaker-dashboard
+    - tracker-timesheets-database
+    - tracker-service-registry
+    - tracker-circuit-breaker-dashboard
+    - tracker-sso
